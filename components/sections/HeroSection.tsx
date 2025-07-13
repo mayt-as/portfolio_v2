@@ -187,14 +187,6 @@ export default function HeroSection({ setActiveSection }: HeroSectionProps) {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-[#00A3FF] to-[#7B4DFF] hover:from-[#0088CC] hover:to-[#6A42E6] text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <Eye className="mr-2 h-5 w-5" />
-              View Projects
-            </Button>
-            <Button
-              size="lg"
               variant="outline"
               className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
               onClick={handleResumeDownload}
