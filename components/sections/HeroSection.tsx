@@ -137,7 +137,7 @@ export default function HeroSection({ setActiveSection }: HeroSectionProps) {
                 Pandey
               </span>
             </motion.h1>
-            
+
             <motion.div
               className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-300 h-8 sm:h-10 md:h-12 flex items-center justify-center"
               initial={{ opacity: 0 }}
