@@ -6,8 +6,8 @@ const nextConfig = {
     unoptimized: true
   },
   // Uncomment and update the following lines if your repo is not <username>.github.io
-  // basePath: '/your-repo-name',
-  // assetPrefix: '/your-repo-name/',
+  basePath: '/portfolio_v2',
+  assetPrefix: '/portfolio_v2/',
   webpack: (config) => {
     config.watchOptions = {
       poll: 1000,
