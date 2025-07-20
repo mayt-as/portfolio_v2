@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin } from 'lucide-react';
+import { SiGithub, SiX } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -57,14 +58,14 @@ export default function ContactSection({ setActiveSection }: ContactSectionProps
     {
       icon: Mail,
       title: 'Email',
-      value: 'satyam.pandey@email.com',
-      link: 'mailto:satyam.pandey@email.com'
+      value: 'satyampandey684@gmail.com',
+      link: 'mailto:satyampandey684@gmail.com'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+91 XXXXX XXXXX',
-      link: 'tel:+91XXXXXXXXX'
+      value: '+91 88405 80212',
+      link: 'tel:+918840580212'
     },
     {
       icon: MapPin,
@@ -76,22 +77,22 @@ export default function ContactSection({ setActiveSection }: ContactSectionProps
 
   const socialLinks = [
     {
-      icon: Github,
+      icon: SiGithub,
       name: 'GitHub',
-      url: 'https://github.com/satyampandey',
-      username: '@satyampandey'
+      url: 'https://github.com/mayt-as',
+      username: '@mayt-as'
     },
     {
       icon: Linkedin,
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/satyampandey',
-      username: '/in/satyampandey'
+      url: 'https://linkedin.com/in/satyampande',
+      username: '/in/satyampande'
     },
     {
-      icon: Twitter,
+      icon: SiX,
       name: 'Twitter',
-      url: 'https://twitter.com/satyampandey',
-      username: '@satyampandey'
+      url: 'https://twitter.com/SatyamPande_',
+      username: '@SatyamPande_'
     }
   ];
 

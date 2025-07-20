@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ChevronDown, Download, Eye, Github, Linkedin, X } from 'lucide-react';
+import { Download, Linkedin } from 'lucide-react';
+import { SiGithub, SiX } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
+import { getAssetPath } from '@/lib/assetUtils';
 
 interface HeroSectionProps {
   setActiveSection: (section: string) => void;
@@ -64,15 +66,15 @@ export default function HeroSection({ setActiveSection }: HeroSectionProps) {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/mayt-as', label: 'GitHub' },
+    { icon: SiGithub, href: 'https://github.com/mayt-as', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com/in/satyampande', label: 'LinkedIn' },
-    { icon: X, href: 'https://x.com/SatyamPande_', label: 'X' }
+    { icon: SiX, href: 'https://x.com/SatyamPande_', label: 'X' }
   ];
 
   // Function to handle resume download
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Satyam_Pandey_Resume.pdf';
+    link.href = getAssetPath('/Satyam_Pandey_Resume.pdf');
     link.download = 'Satyam_Pandey_Resume.pdf';
     document.body.appendChild(link);
     link.click();
