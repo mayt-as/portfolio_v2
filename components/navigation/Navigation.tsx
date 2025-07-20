@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/assetUtils';
 
 interface NavigationProps {
   sections: Array<{ id: string; label: string }>;
@@ -56,7 +57,7 @@ export default function Navigation({ sections, activeSection, setActiveSection }
               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-gradient-to-r from-[#00A3FF] to-[#7B4DFF] bg-gradient-to-r from-[#00A3FF] to-[#7B4DFF] p-0.5">
                 <div className="w-full h-full rounded-full overflow-hidden bg-[#121212]">
                   <Image
-                    src="/satyam_avatar.png"
+                    src={getAssetPath('/satyam_avatar.png')}
                     alt="Satyam Pandey"
                     width={40}
                     height={40}

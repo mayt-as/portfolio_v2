@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ChevronDown, Download, Eye, Github, Linkedin, X } from 'lucide-react';
+import { Download, Linkedin } from 'lucide-react';
+import { SiGithub, SiX } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
+import { getAssetPath } from '@/lib/assetUtils';
 
 interface HeroSectionProps {
   setActiveSection: (section: string) => void;
@@ -64,15 +66,15 @@ export default function HeroSection({ setActiveSection }: HeroSectionProps) {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/mayt-as', label: 'GitHub' },
+    { icon: SiGithub, href: 'https://github.com/mayt-as', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com/in/satyampande', label: 'LinkedIn' },
-    { icon: X, href: 'https://x.com/SatyamPande_', label: 'X' }
+    { icon: SiX, href: 'https://x.com/SatyamPande_', label: 'X' }
   ];
 
   // Function to handle resume download
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Satyam_Pandey_Resume.pdf';
+    link.href = getAssetPath('/Satyam_Pandey_Resume.pdf');
     link.download = 'Satyam_Pandey_Resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -137,7 +139,7 @@ export default function HeroSection({ setActiveSection }: HeroSectionProps) {
                 Pandey
               </span>
             </motion.h1>
-            
+
             <motion.div
               className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-300 h-8 sm:h-10 md:h-12 flex items-center justify-center"
               initial={{ opacity: 0 }}
@@ -185,14 +187,6 @@ export default function HeroSection({ setActiveSection }: HeroSectionProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-[#00A3FF] to-[#7B4DFF] hover:from-[#0088CC] hover:to-[#6A42E6] text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <Eye className="mr-2 h-5 w-5" />
-              View Projects
-            </Button>
             <Button
               size="lg"
               variant="outline"

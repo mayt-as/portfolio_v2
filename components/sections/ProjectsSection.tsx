@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github, Filter } from 'lucide-react';
+import { ExternalLink, Filter } from 'lucide-react';
+import { SiGithub } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
@@ -185,7 +186,7 @@ export default function ProjectsSection({ setActiveSection }: ProjectsSectionPro
                     rel="noopener noreferrer"
                     className="p-2 bg-black/70 rounded-full hover:bg-black/90 transition-colors"
                   >
-                    <Github className="h-4 w-4 text-white" />
+                    <SiGithub className="h-4 w-4 text-white" />
                   </a>
                   <a
                     href={project.liveUrl}
