@@ -6,7 +6,6 @@ import { useInView } from 'react-intersection-observer';
 import { Download, Linkedin } from 'lucide-react';
 import { SiGithub, SiX } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
-import { getAssetPath } from '@/lib/assetUtils';
 
 interface HeroSectionProps {
   setActiveSection: (section: string) => void;
@@ -23,7 +22,7 @@ export default function HeroSection({ setActiveSection }: HeroSectionProps) {
   const [isDeleting, setIsDeleting] = useState(false);
 
   const roles = useMemo(() => [
-    'Software Engineer II @ MAQ Software',
+    'Generative AI Engineer @ Visteon',
     'AI & Data Engineering Specialist',
     'Angular & Python Developer',
     'Cloud-Native Platform Builder',
@@ -62,7 +61,7 @@ export default function HeroSection({ setActiveSection }: HeroSectionProps) {
     'Python', 'C#', 'C++', 'Java', 'SQL', 'JavaScript',
     'Angular', 'React', 'FastAPI', 'Spark', 'Semantic Kernel', 'Syncfusion',
     'Docker', 'CI/CD', 'Databricks', 'Snowflake', 'SSIS', 'Git',
-    'Azure', 'SQL Lakehouse', 'Vector DBs', 'Cloud AI Services', 'SQL Server'
+    'Azure', 'SQL Lakehouse', 'Vector DBs', 'Cloud AI Services', 'SQL Server', 'Oracle', 'OpenCV', 'YOLO', 'Power Automate'
   ];
 
   const socialLinks = [
@@ -73,12 +72,7 @@ export default function HeroSection({ setActiveSection }: HeroSectionProps) {
 
   // Function to handle resume download
   const handleResumeDownload = () => {
-    const link = document.createElement('a');
-    link.href = getAssetPath('/Satyam_Pandey_Resume.pdf');
-    link.download = 'Satyam_Pandey_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open('https://drive.google.com/file/d/1OSpUxIh-7DBSt_-qf55PVmgVuL0-rizj/view?usp=drivesdk', '_blank', 'noopener,noreferrer');
   };
 
   return (
