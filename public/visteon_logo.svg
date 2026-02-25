@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="Visteon logo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#005a7a"/>
+      <stop offset="100%" stop-color="#002a56"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="0" fill="url(#bg)"/>
+  <path fill="#ffffff" d="M48 58h42l31 56 30-56h42l-72 124h-1z"/>
+  <text x="196" y="46" fill="#ffffff" font-size="16" font-family="Arial, Helvetica, sans-serif" font-weight="700">®</text>
+</svg>

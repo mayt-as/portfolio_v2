@@ -33,10 +33,28 @@ export default function TimelineSection({ setActiveSection }: TimelineSectionPro
   const experiences = [
     {
       id: 1,
+      title: 'Generative AI Engineer',
+      company: 'Visteon Corporation',
+      location: 'Pune, Maharashtra, India (Hybrid)',
+      period: 'Sep 2025 – Present',
+      type: 'Work',
+      description: 'Architecting and deploying production-grade AI automation systems, including full-stack report automation and computer-vision-powered document modernization workflows.',
+      achievements: [
+        'Reduced report generation from 8 hours to under 2 minutes (~240x) with a React + FastAPI automation platform',
+        'Built scalable APIs for log/CSV ingestion, analytics visuals, DOCX auto-fill, and audit logging',
+        'Created a Power Automate + FastAPI workflow to replace legacy logos in DOCX, PPTX, and PDFs while preserving structure',
+        'Trained a custom YOLO model for layout-safe PDF logo replacement, improving document processing productivity by 90%+'
+      ],
+      technologies: ['React', 'FastAPI', 'Python', 'SQL Server', 'Oracle', 'Power Automate', 'OpenCV', 'YOLO'],
+      logo: getAssetPath('/visteon_logo.svg'),
+      logoAlt: 'Visteon Corporation'
+    },
+    {
+      id: 2,
       title: 'Software Engineer II',
       company: 'MAQ Software',
       location: 'Noida, Uttar Pradesh, India',
-      period: 'Apr 2025 – Present',
+      period: 'Apr 2025 – Sep 2025',
       type: 'Work',
       description: 'Developed Angular-based UI features, led accessibility efforts, and architected AI-powered data agent solutions integrated with SQL Lakehouse and Power BI.',
       achievements: [
@@ -50,7 +68,7 @@ export default function TimelineSection({ setActiveSection }: TimelineSectionPro
       logoAlt: 'MAQ Software'
     },
     {
-      id: 2,
+      id: 3,
       title: 'Software Engineer I',
       company: 'MAQ Software',
       location: 'Noida, Uttar Pradesh, India',
@@ -68,7 +86,7 @@ export default function TimelineSection({ setActiveSection }: TimelineSectionPro
       logoAlt: 'MAQ Software'
     },
     {
-      id: 3,
+      id: 4,
       title: 'Associate Software Engineer',
       company: 'MAQ Software',
       location: 'Noida, Uttar Pradesh, India',
@@ -86,7 +104,7 @@ export default function TimelineSection({ setActiveSection }: TimelineSectionPro
       logoAlt: 'MAQ Software'
     },
     {
-      id: 4,
+      id: 5,
       title: 'B.Tech (IT)',
       company: 'IIIT Bhubaneswar',
       location: 'Bhubaneswar, Odisha, India',

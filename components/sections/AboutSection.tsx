@@ -23,7 +23,7 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
   }, [inView, setActiveSection]);
 
   const stats = [
-    { number: '2+', label: 'Years Experience', icon: Target },
+    { number: '3+', label: 'Years Experience', icon: Target },
     { number: '1500+', label: 'Problems Solved', icon: Code },
     { number: '6', label: 'Certifications', icon: Award },
     { number: '5+', label: 'Team Collaborations', icon: Users }
@@ -33,17 +33,17 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
     {
       icon: Code,
       title: 'AI-Powered Systems',
-      description: 'Designing and implementing modular, multi-agent RAG solutions and scalable data pipelines using Python, Spark, and cloud-native platforms.'
+      description: 'Designing production-grade Generative AI systems, multi-agent workflows, and enterprise automation platforms that deliver measurable business impact.'
     },
     {
       icon: Brain,
-      title: 'Accessible UI & Frontend',
-      description: 'Developing dynamic, accessible Angular-based UIs, leading accessibility efforts for WCAG/ADA compliance, and building custom components.'
+      title: 'Backend & AI Architecture',
+      description: 'Building resilient FastAPI and Python services with dependency injection, robust observability, and scalable API orchestration for enterprise workloads.'
     },
     {
       icon: Cloud,
       title: 'Cloud & Data Engineering',
-      description: 'Building secure, distributed, and high-availability platforms on Azure, SQL Lakehouse, and integrating with Power BI and vector databases.'
+      description: 'Developing scalable data and CV-powered automation solutions across SQL Server/Oracle ecosystems, document pipelines, and cloud-native services.'
     }
   ];
 
@@ -86,7 +86,7 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                I&apos;m Satyam Pandey, a Software Engineer with 2 years of experience specializing in building scalable applications and AI-powered systems. My passion lies in crafting cloud-native platforms that are both secure and accessible, designed to thrive in distributed environments.
+                I&apos;m Satyam Pandey, a Generative AI Engineer focused on building production-grade AI systems that drive measurable business impact.
               </motion.p>
 
               <motion.p
@@ -95,7 +95,7 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.25 }}
               >
-                My expertise spans full-stack development, from creating dynamic, Angular-based UI features and ensuring WCAG/ADA compliance, to architecting robust backend services. I have a strong track record in data engineering with Python and Spark, and a particular focus on designing and implementing advanced AI solutions, including multi-agent RAG frameworks and AI-powered data agent solutions.
+                At Visteon Corporation, I architect and deploy end-to-end AI and automation solutions, including a full-stack report automation platform that reduced processing time from 8 hours to under 2 minutes, and a computer vision-powered logo replacement system that improved document processing productivity by 90%+.
               </motion.p>
 
               <motion.p
@@ -104,7 +104,7 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                I&apos;m driven by a desire to optimize data workflows, enhance system performance, and implement Responsible AI principles. My commitment to excellence is reflected in my competitive programming achievements and certifications, including Microsoft Certified Azure AI Engineer Associate and Databricks Certified Data Engineer Associate.
+                Previously at MAQ Software, I led large-scale AI initiatives spanning RAG-based chatbots (serving 80K+ users), multi-agent analytics frameworks, scalable data pipelines, and cloud-native deployments across multiple regions. My work emphasizes scalability, Responsible AI, and enterprise reliability.
               </motion.p>
 
               <motion.p
@@ -113,7 +113,7 @@ export default function AboutSection({ setActiveSection }: AboutSectionProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.35 }}
               >
-                Explore my projects to see how I translate complex challenges into innovative and impactful solutions.
+                I specialize in Generative AI, multi-agent systems, backend architecture (FastAPI/Python), computer vision, and scalable data platforms — building solutions that move from concept to high-impact production systems.
               </motion.p>
             </div>
 
