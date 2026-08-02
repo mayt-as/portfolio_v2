@@ -52,9 +52,11 @@ export const experience: Company[] = [
         period: "Mar 2025 — Sep 2025",
         type: "Full-time",
         highlights: [
-          "Designed a modular, AI-powered data agent that plugs into existing SQL Lakehouse and Power BI semantic models to serve query-based insights and visualizations.",
-          "Architected a multi-agent framework on LangGraph — SQL/DAX generator, evaluator, metadata enricher, query suggestor and pruner agents — to drive precise analytics responses.",
-          "Developed and maintained Angular UI features and custom Syncfusion components for dynamic, accessible interfaces.",
+          "Architected a multi-agent analytics framework using LangGraph with SQL/DAX query generator, evaluator, metadata enricher, query suggestor, and pruner agents to automate query-based insights against SQL Lakehouse and Power BI semantic models.",
+          "Benchmarked the custom agent framework against Power BI Copilot using DeepEval across groundedness, accuracy, and relevancy metrics, outperforming Copilot by 35% on groundedness and 41% on accuracy.",
+          "Designed and shipped a modular AI-powered data agent integrating with existing SQL Lakehouse and Power BI semantic models, reducing manual query time by 45% for analytics teams.",
+          "Led front-end accessibility remediation across Angular UI components using Syncfusion libraries, achieving WCAG 2.1 AA compliance across multiple components / raising audit score from 54 to 92.",
+          "Built reusable Angular UI components with Syncfusion for dynamic, accessible enterprise interfaces."
         ],
         skills: ["LangGraph", "Angular", "Power BI", "DAX", "Python"],
       },
@@ -63,22 +65,23 @@ export const experience: Company[] = [
         period: "Aug 2023 — Mar 2025",
         type: "Full-time",
         highlights: [
-          "Led a team of five building an advanced RAG-based chatbot that assisted 80K+ users during a live event.",
-          "Engineered scalable Python and Spark pipelines over structured and unstructured sources, holding accuracy above 90%.",
-          "Designed intent classifiers and prompt optimization strategies, reaching 95%+ compliance with Responsible AI principles.",
-          "Shipped AI agent solutions on Semantic Kernel and containerized inference services with Docker.",
-          "Deployed high-availability cloud infrastructure across six regions, improving reliability and cutting latency.",
-          "Implemented persistent chat history with real-time sync across browser tabs.",
+          "Developed RAG-based AI chatbot serving 80K+ users during global technical event, using Python, vector search, and FastAPI.",
+          "Engineered end-to-end data pipelines with Python and Spark — cleaning, chunking, and vectorizing structured and unstructured data for retrieval — achieving 90%+ retrieval accuracy.",
+          "Designed intent classifier models and prompt optimization strategies, achieving 95%+ compliance with Responsible AI principles.",
+          "Built and deployed AI agent solutions using Semantic Kernel to automate response generation and decision workflows.",
+          "Deployed containerized inference services with Docker across a 6-region high-availability infrastructure, improving reliability and reducing latency.",
+          "Implemented persistent chat history with real-time cross-tab synchronization, improving session continuity for users."
         ],
         skills: ["RAG", "Semantic Kernel", "Azure", "Spark", "Docker", "Vector Databases"],
       },
       {
         title: "Associate Software Engineer",
         period: "Feb 2023 — Aug 2023",
-        type: "Internship",
+        type: "Full-time",
         highlights: [
-          "Created and optimized SQL Server databases and stored procedures to improve data integrity and performance.",
-          "Built SSIS ETL pipelines consolidating data across multiple sources.",
+          "Created and optimized databases and stored procedures in SQL Server to improve data integrity and performance.",
+          "Developed ETL pipelines using SSIS for data consolidation across multiple sources.",
+          "Diagnosed and resolved issues in SQL Server and SSIS, improving system stability and efficiency."
         ],
         skills: ["SQL Server", "SSIS", "Power BI", "Azure"],
       },
