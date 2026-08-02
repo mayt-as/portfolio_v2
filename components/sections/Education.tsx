@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import type { SectionProps } from '@/lib/types';
+import { asset } from '@/lib/utils';
 import SectionShell from '../SectionShell';
 import Reveal from '../Reveal';
 
@@ -12,7 +13,7 @@ export default function Education({ section }: SectionProps<'education'>) {
             <div className="flex gap-4">
               {edu.logo && (
                 <Image
-                  src={edu.logo}
+                  src={asset(edu.logo)}
                   alt={edu.institution}
                   width={40}
                   height={40}

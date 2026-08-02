@@ -21,7 +21,7 @@ export default function Hero({ section }: SectionProps<"hero">) {
         {site.avatar && (
           <Reveal>
             <Image
-              src={site.avatar}
+              src={asset(site.avatar)}
               alt={site.name}
               width={64}
               height={64}

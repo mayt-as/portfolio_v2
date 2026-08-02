@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import type { SectionProps } from '@/lib/types';
+import { asset } from '@/lib/utils';
 import SectionShell from '../SectionShell';
 import Reveal from '../Reveal';
 
@@ -13,7 +14,7 @@ export default function Experience({ section }: SectionProps<'experience'>) {
               <div className="mt-1 h-10 w-10 flex-none">
                 {company.logo && (
                   <Image
-                    src={company.logo}
+                    src={asset(company.logo)}
                     alt={company.company}
                     width={40}
                     height={40}
