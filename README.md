@@ -1,146 +1,73 @@
-# Portfolio Website v2
+# Portfolio
 
-A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features a clean design with smooth animations, particle effects, and an intuitive user experience.
+Minimal, config-driven portfolio site. Built with Next.js (static export), TypeScript and Tailwind CSS. Deployed automatically to GitHub Pages on every push to `main`.
 
-## 🚀 Features
+Live: https://mayt-as.github.io/portfolio_v2/
 
-- **Modern Tech Stack**: Built with Next.js 13, TypeScript, and Tailwind CSS
-- **Responsive Design**: Fully responsive across all device sizes
-- **Interactive Animations**: Smooth animations powered by Framer Motion
-- **Particle Effects**: Dynamic background particle system
-- **Component Library**: Comprehensive UI components using Radix UI
-- **Dark Theme**: Sleek dark mode design
-- **Sections Include**:
-  - Hero section with introduction
-  - About section with personal information
-  - Skills showcase
-  - Professional timeline/journey
-  - Contact form
-  - Smooth scroll navigation
+## Updating your info
 
-## 🛠️ Tech Stack
+All content lives in **`content/`** — nothing else needs to change to add a job, a project, a skill, or a certification.
 
-- **Framework**: [Next.js](https://nextjs.org/) 13.5.1
-- **Language**: [TypeScript](https://www.typescriptlang.org/) 5.2.2
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) 3.3.3
-- **Animations**: [Framer Motion](https://www.framer.com/motion/) 12.23.0
-- **UI Components**: [Radix UI](https://www.radix-ui.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Form Handling**: [React Hook Form](https://react-hook-form.com/) with Zod validation
+| File | Controls |
+|---|---|
+| `content/site.ts` | Name, role, tagline, email, resume/avatar paths, social links, SEO |
+| `content/experience.ts` | Work history (companies → roles → highlights) |
+| `content/projects.ts` | Project cards |
+| `content/skills.ts` | Skill groups/chips |
+| `content/education.ts` | Degrees |
+| `content/certifications.ts` | Certifications |
+| `content/index.ts` | **The page itself** — which sections exist, their order, titles, and nav labels |
 
-## 📦 Installation
+To reorder the page, reorder the `sections` array in `content/index.ts`. To hide a section without deleting its content, add `enabled: false` to its entry. A section with an empty list (e.g. `projects: []`) hides itself automatically — no flag needed.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/mayt-as/portfolio_v2.git
-   cd portfolio_v2
-   ```
+To add a section type that doesn't exist yet (a new kind of content, not just new data), there's a `custom` section type — see the commented example in `content/index.ts` and the shape in `lib/types.ts`. For anything beyond that, add a new `type` in `lib/types.ts`, a component in `components/sections/`, and one line in `components/Section.tsx`'s switch.
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+Static files (resume PDF, avatar, logos) go in `public/` and are referenced by path in `content/site.ts` etc. — e.g. `/satyam_avatar.png`.
 
-3. **Run the development server**:
-   ```bash
-   npm run dev
-   ```
+## Local development
 
-4. **Open your browser** and navigate to `http://localhost:3001`
-
-## 🚀 Available Scripts
-
-- `npm run dev` - Start the development server on port 3001
-- `npm run build` - Build the application for production
-- `npm run start` - Start the production server on port 3000
-- `npm run preview` - Preview the built application
-- `npm run lint` - Run ESLint for code quality checks
-
-## 📁 Project Structure
-
-```
-portfolio_v2/
-├── app/                      # Next.js app directory
-│   ├── globals.css          # Global styles
-│   ├── layout.tsx           # Root layout component
-│   └── page.tsx             # Main page component
-├── components/              # Reusable components
-│   ├── effects/            # Visual effects components
-│   │   └── ParticleBackground.tsx
-│   ├── navigation/         # Navigation components
-│   │   └── Navigation.tsx
-│   ├── sections/           # Page sections
-│   │   ├── AboutSection.tsx
-│   │   ├── ContactSection.tsx
-│   │   ├── HeroSection.tsx
-│   │   ├── ProjectsSection.tsx
-│   │   ├── SkillsSection.tsx
-│   │   └── TimelineSection.tsx
-│   └── ui/                 # UI component library
-├── hooks/                  # Custom React hooks
-├── lib/                    # Utility functions
-├── public/                 # Static assets
-└── config files           # Configuration files
+```bash
+npm install
+npm run dev       # http://localhost:3001
 ```
 
-## 🎨 Customization
+```bash
+npm run build      # static export -> ./out
+npm run typecheck   # tsc --noEmit
+npm run lint
+```
 
-### Colors
-The project uses a custom color scheme with gradients. Main colors include:
-- Background: `#121212` (Dark)
-- Primary Gradient: `#00A3FF` to `#7B4DFF`
-- Text: White/Light colors
+## Deployment
 
-### Components
-All components are built with modularity in mind:
-- **Sections**: Individual page sections that can be easily modified
-- **UI Components**: Reusable components based on Radix UI
-- **Effects**: Interactive visual elements
+`.github/workflows/nextjs.yml` builds the static export and publishes it via GitHub Pages on every push to `main` — no manual steps. It sets `NEXT_PUBLIC_BASE_PATH=/portfolio_v2` at build time because this is a GitHub *project* page (`mayt-as.github.io/portfolio_v2`), not a root user page.
 
-### Adding New Sections
-1. Create a new component in `components/sections/`
-2. Import and add it to the main page in `app/page.tsx`
-3. Update the navigation sections array
+To move to a custom domain or a root `mayt-as.github.io` page later:
+1. Remove the `NEXT_PUBLIC_BASE_PATH` line from the workflow (or set it to `""`).
+2. Update `site.url` in `content/site.ts`.
+3. Add a `CNAME` file under `public/` if using a custom domain.
 
-## 📱 Responsive Design
+No other code changes are required — `next.config.js` and `lib/utils.ts#asset()` read the base path from that single env var.
 
-The website is fully responsive with breakpoints:
-- Mobile: `< 768px`
-- Tablet: `768px - 1024px`
-- Desktop: `> 1024px`
+## Stack
 
-## 🔧 Configuration
+- **Next.js 14** (static export, App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion** for scroll-reveal only (no particle/canvas effects — kept deliberately light)
+- **lucide-react** for icons, referenced by name from content files
 
-### Tailwind CSS
-Configuration is in `tailwind.config.ts` with custom:
-- Colors and gradients
-- Animations
-- Component variants
+## Structure
 
-### Next.js
-Configuration is in `next.config.js` for:
-- Build optimization
-- Image optimization
-- Custom webpack settings
-
-## 📄 License
-
-This project is private and intended for personal use.
-
-## 👨‍💻 Author
-
-**Satyam Pandey**
-- GitHub: [@mayt-as](https://github.com/mayt-as)
-- LinkedIn: [satyampande](https://linkedin.com/in/satyampande)
-
-## 🤝 Contributing
-
-This is a personal portfolio project, but suggestions and feedback are welcome! Feel free to open an issue or submit a pull request.
-
-## 📞 Support
-
-If you have any questions or need help with the project, feel free to reach out through the contact form on the website or create an issue in the repository.
-
----
-
-**Built with ❤️ using Next.js and TypeScript**
+```
+app/                 layout, page, global styles
+components/
+  sections/           one component per section type (Hero, About, Experience, ...)
+  Section.tsx         dispatches a content entry to its component
+  Nav.tsx, Footer.tsx
+content/              <- you edit this
+lib/
+  types.ts            section/content shape definitions
+  sections.ts         visibility + nav derivation
+  utils.ts            cn(), asset()
+public/               resume, avatar, logos
+```

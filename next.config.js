@@ -1,26 +1,23 @@
+/**
+ * Base path handling
+ * ------------------
+ * GitHub Pages serves project sites from a sub-path (e.g. /portfolio_v2), so the
+ * site needs `basePath`. Rather than guessing from NODE_ENV, it is read from an
+ * explicit env var that the deploy workflow sets. That means:
+ *   - `npm run dev`   -> no base path
+ *   - local `npm run build` -> no base path (previewable with `npx serve out`)
+ *   - CI / GitHub Pages -> NEXT_PUBLIC_BASE_PATH=/portfolio_v2
+ * Moving to a custom domain later = drop the env var from the workflow.
+ */
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  distDir: 'out',
   trailingSlash: true,
-  images: {
-    unoptimized: true
-  },
-  // Only apply basePath and assetPrefix for production builds
-  ...(process.env.NODE_ENV === 'production' && {
-    basePath: '/portfolio_v2',
-    assetPrefix: '/portfolio_v2/',
-  }),
-  // Enable static export for GitHub Pages deployment
-  ...(process.env.GITHUB_PAGES === 'true' && {
-    output: 'export',
-    distDir: 'out',
-  }),
-  webpack: (config) => {
-    config.watchOptions = {
-      poll: 1000,
-      aggregateTimeout: 300,
-    }
-    return config
-  },
-}
+  images: { unoptimized: true },
+  ...(basePath && { basePath, assetPrefix: basePath }),
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
